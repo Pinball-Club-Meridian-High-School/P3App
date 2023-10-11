@@ -4,7 +4,7 @@ using Multimorphic.P3App.Data;
 using Multimorphic.P3App.Modes.Data;
 using System;
 
-namespace Multimorphic.P3SA.Modes.Data
+namespace MeridianPinballClub.P3SA.Modes.Data
 {
 
     public class P3SASettingsMode : SettingsMode

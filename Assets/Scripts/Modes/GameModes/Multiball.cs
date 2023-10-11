@@ -5,7 +5,7 @@ using Multimorphic.P3App.Modes;
 using Multimorphic.P3App.Modes.Data;
 using System;
 
-namespace Multimorphic.P3SA.Modes
+namespace MeridianPinballClub.P3SA.Modes
 {
 
 	// Data the GUI will need when a jackpot is hit.

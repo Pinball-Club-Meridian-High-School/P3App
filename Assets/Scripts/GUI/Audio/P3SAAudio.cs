@@ -8,7 +8,7 @@ using Multimorphic.P3App.Modes;
 using System.IO;
 using System.Text.RegularExpressions;
 
-namespace Multimorphic.P3SA.GUI
+namespace MeridianPinballClub.P3SA.GUI
 {
 
     public class PlaylistRequest

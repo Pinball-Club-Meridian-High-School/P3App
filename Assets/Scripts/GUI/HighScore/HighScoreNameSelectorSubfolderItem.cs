@@ -2,7 +2,7 @@
 
 using Multimorphic.P3App.GUI.Selector;
 
-namespace Multimorphic.P3SA.GUI {
+namespace MeridianPinballClub.P3SA.GUI {
 
 	public class HighScoreNameSelectorSubfolderItem : SelectorItem {
 

@@ -1,9 +1,9 @@
 using UnityEngine;
 using System.Collections;
-using Multimorphic.P3SA.Modes;
+using MeridianPinballClub.P3SA.Modes;
 using Multimorphic.P3App.GUI;
 
-namespace Multimorphic.P3SA.GUI {
+namespace MeridianPinballClub.P3SA.GUI {
 	public class Inventory : P3Aware {
 
 		private GameObject [] OnIcons;

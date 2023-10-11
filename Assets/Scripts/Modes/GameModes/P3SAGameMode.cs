@@ -2,11 +2,11 @@ using Multimorphic.NetProcMachine.Machine;
 using Multimorphic.NetProcMachine.LEDs;
 using System.Collections.Generic;
 using Multimorphic.P3App.Modes;
-using Multimorphic.P3SA.Modes;
+using MeridianPinballClub.P3SA.Modes;
 using Multimorphic.P3;
-using Multimorphic.P3SA.GUI;
+using MeridianPinballClub.P3SA.GUI;
 
-namespace Multimorphic.P3SA.Modes
+namespace MeridianPinballClub.P3SA.Modes
 {
 	public class P3SAGameMode : GameMode
 	{

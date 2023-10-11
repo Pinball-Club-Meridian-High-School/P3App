@@ -2,7 +2,7 @@ using Multimorphic.P3.Mechs;
 using Multimorphic.P3App.Modes;
 using Multimorphic.P3App.Data;
 
-namespace Multimorphic.P3SA.Modes
+namespace MeridianPinballClub.P3SA.Modes
 {
 	/// <summary>
 	/// A mode to control ball launches from the various VUKs.

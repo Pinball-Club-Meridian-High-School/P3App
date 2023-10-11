@@ -4,7 +4,7 @@ using Multimorphic.NetProcMachine.Machine;
 using Multimorphic.P3;
 using Multimorphic.P3App.Modes;
 
-namespace Multimorphic.P3SA.Modes
+namespace MeridianPinballClub.P3SA.Modes
 {
 
 	/// <summary>

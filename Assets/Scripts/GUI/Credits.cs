@@ -1,10 +1,10 @@
-// Copyright © 2019 Multimorphic, Inc. All Rights Reserved
+// Copyright ï¿½ 2019 Multimorphic, Inc. All Rights Reserved
 
 using Multimorphic.P3App.GUI;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Multimorphic.P3SA.GUI {
+namespace MeridianPinballClub.P3SA.GUI {
 
 	public class Credits : P3Aware {
 		private Text creditsText;

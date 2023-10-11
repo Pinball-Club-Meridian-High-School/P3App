@@ -3,7 +3,7 @@ using Multimorphic.P3;
 using System.Collections.Generic;
 using Multimorphic.P3App.Modes;
 
-namespace Multimorphic.P3SA.Modes
+namespace MeridianPinballClub.P3SA.Modes
 {
 
     public class TargetSaveMode : P3SAGameMode

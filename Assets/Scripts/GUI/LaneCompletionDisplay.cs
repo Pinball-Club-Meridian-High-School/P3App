@@ -1,8 +1,8 @@
 using UnityEngine;
 using System.Collections;
-using Multimorphic.P3SA.Modes;
+using MeridianPinballClub.P3SA.Modes;
 
-namespace Multimorphic.P3SA.GUI {
+namespace MeridianPinballClub.P3SA.GUI {
 
 	public class LaneCompletionDisplay : MonoBehaviour {
 

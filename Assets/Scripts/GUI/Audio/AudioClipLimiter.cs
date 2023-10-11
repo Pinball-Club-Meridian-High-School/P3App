@@ -1,9 +1,9 @@
-﻿// Copyright © 2020 Multimorphic, Inc. All Rights Reserved
+// Copyright © 2020 Multimorphic, Inc. All Rights Reserved
 
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Multimorphic.P3SA.GUI
+namespace MeridianPinballClub.P3SA.GUI
 {
 
     public class AudioClipLimiter : MonoBehaviour

@@ -2,9 +2,9 @@ using UnityEngine;
 using System.Collections;
 using System;
 using Multimorphic.P3App.GUI;
-using Multimorphic.P3SA.Modes;
+using MeridianPinballClub.P3SA.Modes;
 
-namespace Multimorphic.P3SA.GUI
+namespace MeridianPinballClub.P3SA.GUI
 {
 	public class P3SASetup : Setup {
 

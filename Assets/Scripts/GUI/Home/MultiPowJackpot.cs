@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Multimorphic.P3App.GUI;
 
-namespace Multimorphic.P3SA.GUI {
+namespace MeridianPinballClub.P3SA.GUI {
 
 	public class MultiPowJackpot : MonoBehaviour {
 

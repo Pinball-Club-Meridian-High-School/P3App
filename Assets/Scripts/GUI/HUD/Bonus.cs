@@ -5,7 +5,7 @@ using Multimorphic.P3App.Modes;
 using Multimorphic.P3App.GUI;
 using Multimorphic.P3App.Logging;
 
-namespace Multimorphic.P3SA.GUI {
+namespace MeridianPinballClub.P3SA.GUI {
 
 	public class Bonus : BonusBackgroundBase {
 

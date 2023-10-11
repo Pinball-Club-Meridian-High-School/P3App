@@ -8,7 +8,7 @@ using Multimorphic.P3App.Logging;
 
 using System.Collections.Generic;
 
-namespace Multimorphic.P3SA.Modes
+namespace MeridianPinballClub.P3SA.Modes
 {
 
     public class TripleTargetsMode : P3SAGameMode

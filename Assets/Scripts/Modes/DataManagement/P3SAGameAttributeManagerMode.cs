@@ -2,11 +2,11 @@ using Multimorphic.NetProcMachine.Machine;
 using Multimorphic.P3;
 using Multimorphic.P3App.Modes;
 using Multimorphic.P3App.Modes.Data;
-using Multimorphic.P3SA.Modes.Data;
+using MeridianPinballClub.P3SA.Modes.Data;
 using System;
 using System.Collections.Generic;
 
-namespace Multimorphic.P3SA.Modes.Data
+namespace MeridianPinballClub.P3SA.Modes.Data
 {
     public class P3SAGameAttributeManagerMode : GameAttributeManagerMode
 	{

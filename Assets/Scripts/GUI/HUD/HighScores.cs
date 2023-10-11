@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Multimorphic.P3App.Modes.Data;
 using Multimorphic.P3App.Modes;
 
-namespace Multimorphic.P3SA.GUI {
+namespace MeridianPinballClub.P3SA.GUI {
 
 
 	public class HighScores : BonusBackgroundBase {

@@ -6,7 +6,7 @@ using Multimorphic.P3App.Modes.Data;
 using System;
 using System.Collections.Generic;
 
-namespace Multimorphic.P3SA.Modes.Data
+namespace MeridianPinballClub.P3SA.Modes.Data
 {
 	public class P3SAStatisticsMode : StatisticsMode
 	{

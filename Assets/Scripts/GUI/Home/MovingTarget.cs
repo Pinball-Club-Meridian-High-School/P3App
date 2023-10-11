@@ -3,7 +3,7 @@ using System.Collections;
 using Multimorphic.P3App.GUI;
 using Multimorphic.P3App.Logging;
 
-namespace Multimorphic.P3SA.GUI {
+namespace MeridianPinballClub.P3SA.GUI {
 	
 	public class MovingTarget : P3Aware {
 		private Vector3 destination;

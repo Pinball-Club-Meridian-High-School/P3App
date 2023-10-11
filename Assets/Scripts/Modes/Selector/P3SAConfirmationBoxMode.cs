@@ -5,7 +5,7 @@ using Multimorphic.P3App.Modes.Menu;
 using Multimorphic.P3;
 using Multimorphic.P3App.Logging;
 
-namespace Multimorphic.P3SA.Modes.Menu
+namespace MeridianPinballClub.P3SA.Modes.Menu
 {
 
     public class P3SAConfirmationBoxMode : ConfirmationBoxMode

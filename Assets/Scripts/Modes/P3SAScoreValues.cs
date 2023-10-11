@@ -1,7 +1,7 @@
 //using Multimorphic.NetProcMachine.Machine;
 //using Multimorphic.P3;
 
-namespace Multimorphic.P3SA.Modes
+namespace MeridianPinballClub.P3SA.Modes
 {
 
 	public static class Scores

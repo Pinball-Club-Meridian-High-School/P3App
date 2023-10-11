@@ -2,7 +2,7 @@
 
 using Multimorphic.P3App.GUI.Selector;
 
-namespace Multimorphic.P3SA.GUI {
+namespace MeridianPinballClub.P3SA.GUI {
 
 	public class HighScoreNameSelector : P3SATextSelector {
 		//private readonly List<string> highScoreNameSelectorData;  // Could be any type, depending on what data might come from the mode side to populate the selector.

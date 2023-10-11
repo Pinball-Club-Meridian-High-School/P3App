@@ -1,9 +1,9 @@
 using UnityEngine;
 using System.Collections;
-using Multimorphic.P3SA.GUI;
+using MeridianPinballClub.P3SA.GUI;
 using Multimorphic.P3App.GUI;
 
-namespace Multimorphic.P3SA.GUI {
+namespace MeridianPinballClub.P3SA.GUI {
 
 	public class IntroVideoSceneController : P3SASceneController {
 

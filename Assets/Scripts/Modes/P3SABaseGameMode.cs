@@ -4,13 +4,13 @@ using Multimorphic.P3App.Data;
 using Multimorphic.P3App.Modes.Data;
 using Multimorphic.P3App.Modes;
 using Multimorphic.P3App.Modes.Selector;
-using Multimorphic.P3SA.Modes.Data;
-using Multimorphic.P3SA.Modes.Menu;
+using MeridianPinballClub.P3SA.Modes.Data;
+using MeridianPinballClub.P3SA.Modes.Menu;
 using System.Collections.Generic;
 using System.Xml;
-using Multimorphic.P3SA.Modes;
+using MeridianPinballClub.P3SA.Modes;
 
-namespace Multimorphic.P3SA.Modes
+namespace MeridianPinballClub.P3SA.Modes
 {
 
 	/// <summary>
@@ -70,7 +70,7 @@ namespace Multimorphic.P3SA.Modes
 #if DEBUG
             Multimorphic.P3App.Logging.Logger.SetExposureLevel(Multimorphic.P3App.Logging.Logger.Exposure.Dev);
 #else
-            P3App.Logging.Logger.SetExposureLevel(P3App.Logging.Logger.Exposure.Public);
+            Multimorphic.P3App.Logging.Logger.SetExposureLevel(Multimorphic.P3App.Logging.Logger.Exposure.Public);
 #endif
 
             // * Switch events *

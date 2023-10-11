@@ -1,4 +1,4 @@
-// Copyright © 2019 Multimorphic, Inc. All Rights Reserved
+// Copyright ï¿½ 2019 Multimorphic, Inc. All Rights Reserved
 
 using Multimorphic.P3App.GUI.Selector;
 using UnityEngine;

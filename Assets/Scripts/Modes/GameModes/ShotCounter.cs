@@ -2,7 +2,7 @@ using System;
 using Multimorphic.P3;
 using Multimorphic.P3App.Modes;
 
-namespace Multimorphic.P3SA.Modes
+namespace MeridianPinballClub.P3SA.Modes
 {
 
     public class ShotCounter : P3SAGameMode

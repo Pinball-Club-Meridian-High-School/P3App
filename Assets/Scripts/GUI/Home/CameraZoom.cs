@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-namespace Multimorphic.P3SA.GUI {
+namespace MeridianPinballClub.P3SA.GUI {
 
 	public class CameraZoom : MonoBehaviour {
 		private Camera theCamera;

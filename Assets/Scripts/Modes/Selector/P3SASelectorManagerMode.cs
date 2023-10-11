@@ -6,7 +6,7 @@ using Multimorphic.P3App.Modes;
 using Multimorphic.P3App.Modes.Selector;
 using Multimorphic.P3App.Modes.Menu;
 
-namespace Multimorphic.P3SA.Modes.Menu
+namespace MeridianPinballClub.P3SA.Modes.Menu
 {
 
     public class P3SASelectorManagerMode : SelectorManagerMode

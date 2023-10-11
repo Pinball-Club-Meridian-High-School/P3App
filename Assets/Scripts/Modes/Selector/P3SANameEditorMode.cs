@@ -4,7 +4,7 @@ using Multimorphic.NetProcMachine.Machine;
 using Multimorphic.P3;
 using Multimorphic.P3App.Modes.Selector;
 
-namespace Multimorphic.P3SA.Modes.Menu
+namespace MeridianPinballClub.P3SA.Modes.Menu
 {
 
     public class P3SANameEditorMode : SelectorMode

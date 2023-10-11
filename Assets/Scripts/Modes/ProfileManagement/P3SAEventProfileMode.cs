@@ -4,7 +4,7 @@ using Multimorphic.P3;
 using Multimorphic.P3App.Modes;
 using Multimorphic.P3App.Modes.Data;
 
-namespace Multimorphic.P3SA.Modes.Data {
+namespace MeridianPinballClub.P3SA.Modes.Data {
 
 	public class P3SAEventProfileMode : EventProfileMode {
 

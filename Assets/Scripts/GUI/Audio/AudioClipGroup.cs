@@ -1,9 +1,9 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.Audio;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Multimorphic.P3SA.GUI
+namespace MeridianPinballClub.P3SA.GUI
 {
 
     public class AudioClipGroup : MonoBehaviour

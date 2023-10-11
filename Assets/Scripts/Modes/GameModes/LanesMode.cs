@@ -4,10 +4,10 @@ using Multimorphic.P3;
 using System.Collections.Generic;
 using System.Linq;
 using Multimorphic.P3App.Modes;
-using Multimorphic.P3SA.Modes;
+using MeridianPinballClub.P3SA.Modes;
 using Multimorphic.P3App.Modes.Data;
 
-namespace Multimorphic.P3SA.Modes
+namespace MeridianPinballClub.P3SA.Modes
 {
 	public struct LanesCompletedStatus
 	{

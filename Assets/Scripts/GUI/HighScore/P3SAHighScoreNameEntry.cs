@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Multimorphic.P3SA.GUI {
+namespace MeridianPinballClub.P3SA.GUI {
 
 	public class P3SAHighScoreNameEntry : Multimorphic.P3App.GUI.TextEditor {
 		private GameObject bullet;

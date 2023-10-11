@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using Multimorphic.P3SA.Modes;
+using MeridianPinballClub.P3SA.Modes;
 using Multimorphic.P3App.Data;
 using Multimorphic.P3App.Modes.Data;
 
-namespace Multimorphic.P3SA.Modes.Data
+namespace MeridianPinballClub.P3SA.Modes.Data
 {
 	public class P3SAHighScoreCategories
 	{

@@ -1,6 +1,6 @@
 using Multimorphic.P3;
 
-namespace Multimorphic.P3SA.Modes.Menu
+namespace MeridianPinballClub.P3SA.Modes.Menu
 {
 
     public class ProfileSettingsSelectorMode : SettingsSelectorMode
