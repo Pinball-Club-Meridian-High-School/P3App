@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using Multimorphic.P3App.Modes;
 using Multimorphic.P3App.Modes.Data;
 
-namespace MeridianPinballClub.P3SA.Modes
+namespace MeridianPinballClub.MeridianMash.Modes
 {
 
-    public class LiteLockMode : P3SAGameMode
+    public class LiteLockMode : MeridianMashGameMode
 	{
 
 		private List<string> InsertNames;

@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using Multimorphic.P3App.Modes;
 using Multimorphic.P3App.GUI;
-using MeridianPinballClub.P3SA.Modes;
+using MeridianPinballClub.MeridianMash.Modes;
 using Multimorphic.P3App.Logging;
 
-namespace MeridianPinballClub.P3SA.GUI {
-	public class HomeSceneController : P3SASceneController {
+namespace MeridianPinballClub.MeridianMash.GUI {
+	public class HomeSceneController : MeridianMashSceneController {
 
 		private bool outroInProgress = false;
 
@@ -31,8 +31,8 @@ namespace MeridianPinballClub.P3SA.GUI {
 			base.Start();
 
             // Start the default music track
-            if (P3SAAudio.Instance)
-                P3SAAudio.Instance.ChangePlaylistByName(sceneName);
+            if (MeridianMashAudio.Instance)
+                MeridianMashAudio.Instance.ChangePlaylistByName(sceneName);
 			// Now instantiate the music manager.  It will handle necessary music changes.
 			MultiballManagerObject = new GameObject();
 			MultiballManagerObject.AddComponent<MultiballManager>();
@@ -81,7 +81,7 @@ namespace MeridianPinballClub.P3SA.GUI {
 			if (VUKStageTimer > 0) {
 				VUKStageTimer -= Time.deltaTime;
 				if (VUKStageTimer <= 0) {
-					P3SAAudio.Instance.PlaySound3D("VUKRampUp", this.GetSidePos(launchSide));
+					MeridianMashAudio.Instance.PlaySound3D("VUKRampUp", this.GetSidePos(launchSide));
 				}
 			}
 		}
@@ -124,7 +124,7 @@ namespace MeridianPinballClub.P3SA.GUI {
 		
 		public void ShowLightModeEventHandler(string eventName, object eventObject) {
 			Instantiate(Resources.Load("Prefabs/NoModeStart"));
-			P3SAAudio.Instance.PlaySound3D("TractorBeamBallToVUKs", gameObject.transform);
+			MeridianMashAudio.Instance.PlaySound3D("TractorBeamBallToVUKs", gameObject.transform);
 			VUKStageTimer = 1.5f;
 		}
 
@@ -132,7 +132,7 @@ namespace MeridianPinballClub.P3SA.GUI {
 			Instantiate(Resources.Load("Prefabs/NoModeStart"));
 			// Don't show text.  It confuses people.
 			// Instantiate(Resources.Load("Prefabs/NoModeStart_Text"));
-			P3SAAudio.Instance.PlaySound3D("TractorBeamBallToVUKs", gameObject.transform);
+			MeridianMashAudio.Instance.PlaySound3D("TractorBeamBallToVUKs", gameObject.transform);
 			VUKStageTimer = 1.5f;
 		}
 
@@ -141,7 +141,7 @@ namespace MeridianPinballClub.P3SA.GUI {
 		}
 
 		public void ModeSummaryEventHandler(string eventName, object eventObject) {
-			P3SAAudio.Instance.PlaySound3D("ModeSummary", gameObject.transform);
+			MeridianMashAudio.Instance.PlaySound3D("ModeSummary", gameObject.transform);
 			ModeSummary modeSummaryData = (ModeSummary)eventObject;
 			modeSummary = (GameObject)Instantiate(Resources.Load("Prefabs/ModeSummaryWindow"));
 			modeSummaryDisplay = modeSummary.GetComponent<ModeSummaryDisplay>();
@@ -159,7 +159,7 @@ namespace MeridianPinballClub.P3SA.GUI {
 
 		private void CloseModeSummaryEventHandler(string evtName, object evtData)
 		{
-			P3SAAudio.Instance.PlaySound3D("ModeSummaryClose", gameObject.transform);
+			MeridianMashAudio.Instance.PlaySound3D("ModeSummaryClose", gameObject.transform);
 			modeSummaryKillTimer = 2.0f;
 		}
 

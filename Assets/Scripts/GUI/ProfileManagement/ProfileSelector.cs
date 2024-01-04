@@ -5,7 +5,7 @@ using Multimorphic.P3App.GUI;
 using Multimorphic.P3App.GUI.Selector;
 using UnityEngine.UI;
 
-namespace MeridianPinballClub.P3SA.GUI {
+namespace MeridianPinballClub.MeridianMash.GUI {
 
 	public class ProfileSelector : GridShapedSelector {
 	

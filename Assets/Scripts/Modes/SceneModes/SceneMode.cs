@@ -5,7 +5,7 @@ using Multimorphic.P3App.Modes.Data;
 using System.Collections.Generic;
 using Multimorphic.P3App.Logging;
 
-namespace MeridianPinballClub.P3SA.Modes
+namespace MeridianPinballClub.MeridianMash.Modes
 {
 
 	public struct SceneCompleteInfo
@@ -17,7 +17,7 @@ namespace MeridianPinballClub.P3SA.Modes
 	/// <summary>
 	/// The base class for modes which are scene-specific. Particularly useful for scenes which have an objective to be completed.
 	/// </summary>
-	public class SceneMode : P3SAGameMode
+	public class SceneMode : MeridianMashGameMode
 	{
 		private RGBRandomFlashMode Show_RGBRandomFlash;
 		protected InstructionMode instructionMode;
@@ -212,7 +212,7 @@ namespace MeridianPinballClub.P3SA.Modes
 
 		protected virtual bool BallSavedEventHandler(string evtName, object evtData)
 		{
-			P3SABallLauncher.delayed_launch (2.25);
+			MeridianMashBallLauncher.delayed_launch (2.25);
 			if (showBallSaved)
 				PostModeEventToGUI("Evt_BallSavePlayAnimation", sceneName);
 			return SWITCH_STOP;

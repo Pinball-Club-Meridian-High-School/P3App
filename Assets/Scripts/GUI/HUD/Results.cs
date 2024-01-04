@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 
-namespace MeridianPinballClub.P3SA.GUI {
+namespace MeridianPinballClub.MeridianMash.GUI {
 
 
 	public class Results : BonusBackgroundBase {

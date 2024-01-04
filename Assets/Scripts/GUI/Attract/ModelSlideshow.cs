@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-namespace MeridianPinballClub.P3SA.GUI {
+namespace MeridianPinballClub.MeridianMash.GUI {
 	
 	/// <summary>
 	/// Controls the attract mode parade of models.

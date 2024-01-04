@@ -3,7 +3,7 @@
 using Multimorphic.P3;
 using Multimorphic.P3App.Modes.Selector;
 
-namespace MeridianPinballClub.P3SA.Modes {
+namespace MeridianPinballClub.MeridianMash.Modes {
 
 	public class HighScoreNameSelectorMode : SelectorMode {
 

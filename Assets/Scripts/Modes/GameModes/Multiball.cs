@@ -5,7 +5,7 @@ using Multimorphic.P3App.Modes;
 using Multimorphic.P3App.Modes.Data;
 using System;
 
-namespace MeridianPinballClub.P3SA.Modes
+namespace MeridianPinballClub.MeridianMash.Modes
 {
 
 	// Data the GUI will need when a jackpot is hit.
@@ -26,7 +26,7 @@ namespace MeridianPinballClub.P3SA.Modes
 		public int totalBalls;
 	}
 
-    public class Multiball : P3SAGameMode
+    public class Multiball : MeridianMashGameMode
 	{
 		private LiteLockMode liteLockMode;
 		private RGBRandomFlashMode Show_RGBRandomFlash;
@@ -395,7 +395,7 @@ namespace MeridianPinballClub.P3SA.Modes
 					else
 					{
 						debugLockCtr++;
-						P3SABallLauncher.delayed_launch(IncDebugSuccessfulLaunches);
+						MeridianMashBallLauncher.delayed_launch(IncDebugSuccessfulLaunches);
 						IncDebugBallLaunchRequests();
 					}
 
@@ -514,7 +514,7 @@ namespace MeridianPinballClub.P3SA.Modes
 				int ballsToLaunch = ballsLocked - numBallsInSaucer;
 				for (int i=0; i<ballsToLaunch; i++)
 				{
-					P3SABallLauncher.launch (LaunchCallback);
+					MeridianMashBallLauncher.launch (LaunchCallback);
 				}
 			}
 			// Otherwise the requisite number of balls from the ship.
@@ -833,7 +833,7 @@ namespace MeridianPinballClub.P3SA.Modes
 		{
 			saucerBallDraining = false;
 			numBallsInSaucer--;
-			P3SABallLauncher.launch ();
+			MeridianMashBallLauncher.launch ();
 			RefreshInserts();
 
 			return SWITCH_CONTINUE;
@@ -850,7 +850,7 @@ namespace MeridianPinballClub.P3SA.Modes
 			if (multiballActive)
 			{
 				debugShipBottomCtr++;
-				P3SABallLauncher.delayed_launch(IncDebugSuccessfulLaunches);
+				MeridianMashBallLauncher.delayed_launch(IncDebugSuccessfulLaunches);
 				IncDebugBallLaunchRequests();
 				return SWITCH_STOP;
 			}
@@ -889,7 +889,7 @@ namespace MeridianPinballClub.P3SA.Modes
 			if (multiballActive)
 			{
 				debugModeHoleCtr++;
-				P3SABallLauncher.delayed_launch(IncDebugSuccessfulLaunches);
+				MeridianMashBallLauncher.delayed_launch(IncDebugSuccessfulLaunches);
 				IncDebugBallLaunchRequests();
 				return SWITCH_STOP;
 			}
@@ -908,7 +908,7 @@ namespace MeridianPinballClub.P3SA.Modes
 			if (multiballActive)
 			{
 				debugPopEscapeCtr++;
-				P3SABallLauncher.delayed_launch(IncDebugSuccessfulLaunches);
+				MeridianMashBallLauncher.delayed_launch(IncDebugSuccessfulLaunches);
 				IncDebugBallLaunchRequests();
 				return SWITCH_STOP;
 			}
@@ -958,7 +958,7 @@ namespace MeridianPinballClub.P3SA.Modes
 
 		private void AddBall(bool addBallSaveTime)
 		{
-			P3SABallLauncher.launch ();
+			MeridianMashBallLauncher.launch ();
 			IncDebugBallLaunchRequests();
 			ballsInPlay++;
 			jackpotBaseValueMultiplier++;

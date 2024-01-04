@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-namespace MeridianPinballClub.P3SA.GUI
+namespace MeridianPinballClub.MeridianMash.GUI
 {
     public enum FollowAudioClipGroupDelayFrom { WhenParentClipStarts, WhenParentClipFinishes };
 

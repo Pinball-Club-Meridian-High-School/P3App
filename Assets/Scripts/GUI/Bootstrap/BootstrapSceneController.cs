@@ -2,10 +2,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-namespace MeridianPinballClub.P3SA.GUI {
-	public class BootstrapSceneController : P3SASceneController {
+namespace MeridianPinballClub.MeridianMash.GUI {
+	public class BootstrapSceneController : MeridianMashSceneController {
 
-		private P3SASetup setup;
+		private MeridianMashSetup setup;
 
         public Text appName;
         public Text appVersion;
@@ -19,7 +19,7 @@ namespace MeridianPinballClub.P3SA.GUI {
 
 			if (setup == null) 
 			{
-				setup = GameObject.FindObjectOfType<P3SASetup>();
+				setup = GameObject.FindObjectOfType<MeridianMashSetup>();
 			}
             else
             {

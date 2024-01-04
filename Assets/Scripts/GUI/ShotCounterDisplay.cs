@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using Multimorphic.P3App.GUI;
 
-namespace MeridianPinballClub.P3SA.GUI {
+namespace MeridianPinballClub.MeridianMash.GUI {
 
 	public class ShotCounterDisplay : P3Aware {
 

@@ -3,7 +3,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MeridianPinballClub.P3SA.GUI
+namespace MeridianPinballClub.MeridianMash.GUI
 {
 
     public class AudioClipLimiter : MonoBehaviour

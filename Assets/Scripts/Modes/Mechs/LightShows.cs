@@ -6,7 +6,7 @@ using Multimorphic.P3;
 using Multimorphic.P3App.Modes;
 using Multimorphic.P3App.Logging;
 
-namespace MeridianPinballClub.P3SA.Modes
+namespace MeridianPinballClub.MeridianMash.Modes
 {
 	/// <summary>
 	/// A mode in which LED scripts are declared and their logic is implemented.

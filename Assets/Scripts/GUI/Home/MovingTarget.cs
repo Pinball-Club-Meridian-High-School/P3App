@@ -3,7 +3,7 @@ using System.Collections;
 using Multimorphic.P3App.GUI;
 using Multimorphic.P3App.Logging;
 
-namespace MeridianPinballClub.P3SA.GUI {
+namespace MeridianPinballClub.MeridianMash.GUI {
 	
 	public class MovingTarget : P3Aware {
 		private Vector3 destination;
@@ -41,7 +41,7 @@ namespace MeridianPinballClub.P3SA.GUI {
                 Multimorphic.P3App.Logging.Logger.Log("GUI layer: Target hit by " + other.name + ". Posting TargetHit event to mode layer.");
                 PostGUIEventToModes("Evt_TargetHit", other.name);
                 gameObject.GetComponent<Renderer>().material.color = Color.red;
-                P3SAAudio.Instance.PlaySound("GroupTest");
+                MeridianMashAudio.Instance.PlaySound("GroupTest");
             }
 		}
 		

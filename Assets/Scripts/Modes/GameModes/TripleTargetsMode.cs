@@ -8,10 +8,10 @@ using Multimorphic.P3App.Logging;
 
 using System.Collections.Generic;
 
-namespace MeridianPinballClub.P3SA.Modes
+namespace MeridianPinballClub.MeridianMash.Modes
 {
 
-    public class TripleTargetsMode : P3SAGameMode
+    public class TripleTargetsMode : MeridianMashGameMode
 	{
 		private List<bool> targetStates;
 		private bool allTargetsHit;

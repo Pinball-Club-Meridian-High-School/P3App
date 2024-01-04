@@ -3,9 +3,9 @@ using Multimorphic.P3;
 using Multimorphic.P3App.Modes.Data;
 using Multimorphic.P3App.Modes;
 
-namespace MeridianPinballClub.P3SA.Modes
+namespace MeridianPinballClub.MeridianMash.Modes
 {
-	public class RespawnMode : P3SAGameMode
+	public class RespawnMode : MeridianMashGameMode
 	{
 		private int count;
 		private bool enabled;

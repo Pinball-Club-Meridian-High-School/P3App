@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using Multimorphic.P3App.Modes;
 using Multimorphic.P3App.Logging;
 
-namespace MeridianPinballClub.P3SA.Modes
+namespace MeridianPinballClub.MeridianMash.Modes
 {
 
     public class TargetCompletionMode : P3Mode

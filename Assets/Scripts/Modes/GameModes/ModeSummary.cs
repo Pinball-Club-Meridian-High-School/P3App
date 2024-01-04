@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace MeridianPinballClub.P3SA.Modes {
+namespace MeridianPinballClub.MeridianMash.Modes {
 
 	/// <summary>
 	/// A descriptor for the various achievements from a mode or scene.  Holds the content for the ModeSummary display in the GUI layer.

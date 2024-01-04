@@ -9,7 +9,7 @@ using Multimorphic.P3App.Modes.Data;
 using Multimorphic.P3App.Logging;
 using Multimorphic.P3App.Modes.PlayfieldModule;
 
-namespace MeridianPinballClub.P3SA.Modes
+namespace MeridianPinballClub.MeridianMash.Modes
 {
 	/// <summary>
 	/// The starting mode for the players' game.  
@@ -27,7 +27,7 @@ namespace MeridianPinballClub.P3SA.Modes
 		private MovingTargetMode movingTargetMode;
 		private SideTargetMode sideTargetMode;
 		private LanesMode lanesMode;
-		private P3SAGameMode modeSummaryPendingMode;
+		private MeridianMashGameMode modeSummaryPendingMode;
 
         // Declare TwitchControlMode to handle twitch viewer interactions
         private TwitchControlMode twitchControlMode;
@@ -45,17 +45,17 @@ namespace MeridianPinballClub.P3SA.Modes
 		public HomeMode (P3Controller controller, int priority, string SceneName)
 			: base(controller, priority, SceneName)
 		{
-			//multiball = new Multiball (p3, P3SAPriorities.PRIORITY_MULTIBALL);
-			rightRampCounterMode = new ShotCounter(p3, P3SAPriorities.PRIORITY_SHOT_COUNTERS, "Evt_RightRampHit", "Evt_RightRampInc");
-			leftRampCounterMode = new ShotCounter(p3, P3SAPriorities.PRIORITY_SHOT_COUNTERS, "Evt_LeftRampHit", "Evt_LeftRampInc");
+			//multiball = new Multiball (p3, MeridianMashPriorities.PRIORITY_MULTIBALL);
+			rightRampCounterMode = new ShotCounter(p3, MeridianMashPriorities.PRIORITY_SHOT_COUNTERS, "Evt_RightRampHit", "Evt_RightRampInc");
+			leftRampCounterMode = new ShotCounter(p3, MeridianMashPriorities.PRIORITY_SHOT_COUNTERS, "Evt_LeftRampHit", "Evt_LeftRampInc");
 
-			ballStartMode = new BallStartMode (p3, P3SAPriorities.PRIORITY_HOME_UTILITIES);
-			lanesMode = new LanesMode (p3, P3SAPriorities.PRIORITY_LANES);
+			ballStartMode = new BallStartMode (p3, MeridianMashPriorities.PRIORITY_HOME_UTILITIES);
+			lanesMode = new LanesMode (p3, MeridianMashPriorities.PRIORITY_LANES);
 
-			ballSaveMode = new BallSaveMode (p3, P3SAPriorities.PRIORITY_BALL_SAVE);
-			respawnMode = new RespawnMode (p3, P3SAPriorities.PRIORITY_RESPAWN);
-			movingTargetMode = new MovingTargetMode (p3, P3SAPriorities.PRIORITY_MOVING_TARGET);
-			sideTargetMode = new SideTargetMode (p3, P3SAPriorities.PRIORITY_SIDE_TARGET);
+			ballSaveMode = new BallSaveMode (p3, MeridianMashPriorities.PRIORITY_BALL_SAVE);
+			respawnMode = new RespawnMode (p3, MeridianMashPriorities.PRIORITY_RESPAWN);
+			movingTargetMode = new MovingTargetMode (p3, MeridianMashPriorities.PRIORITY_MOVING_TARGET);
+			sideTargetMode = new SideTargetMode (p3, MeridianMashPriorities.PRIORITY_SIDE_TARGET);
 
             // Instantiate TwitchControlMode to handle twitch viewer interactions - don't forget to add it to the mode queue
             // in mode_started or StartPlaying (or later) and remove it from the mode queue in mode_stopped or earlier.
@@ -352,7 +352,7 @@ namespace MeridianPinballClub.P3SA.Modes
 		{
 			if (allowStealthLaunch)
 			{
-				P3SABallLauncher.launch();
+				MeridianMashBallLauncher.launch();
 			}
 			return SWITCH_CONTINUE;
 		}
@@ -371,9 +371,9 @@ namespace MeridianPinballClub.P3SA.Modes
             PostModeEventToModes("Evt_TwitchAllowPowerupRequests", true);
 
             if (p3.Switches["buttonLeft0"].IsActive())
-				P3SABallLauncher.launch (P3SABallLauncher.VUK_LEFT, LaunchCallback);
+				MeridianMashBallLauncher.launch (MeridianMashBallLauncher.VUK_LEFT, LaunchCallback);
 			else
-				P3SABallLauncher.launch (P3SABallLauncher.VUK_RIGHT, LaunchCallback);
+				MeridianMashBallLauncher.launch (MeridianMashBallLauncher.VUK_RIGHT, LaunchCallback);
 			int ballSaveTime = data.GetGameAttributeValue("BallSaveTime").ToInt();
 			PostModeEventToModes ("Evt_BallSaveStart", ballSaveTime);
 			PostModeEventToModes ("Evt_BallSavePauseUntilGrid", 0);
@@ -553,7 +553,7 @@ namespace MeridianPinballClub.P3SA.Modes
 
 		public bool ScoopEventHandler(string eventName, object eventData)
 		{
-			P3SABallLauncher.delayed_launch();
+			MeridianMashBallLauncher.delayed_launch();
 			return SWITCH_STOP;
 		}
 
@@ -573,7 +573,7 @@ namespace MeridianPinballClub.P3SA.Modes
 
 		private bool BallSearchBallLaunchRequestEventHandler(string evtName, object evtData)
 		{
-			P3SABallLauncher.launch();
+			MeridianMashBallLauncher.launch();
 			return SWITCH_CONTINUE;
 		}
 

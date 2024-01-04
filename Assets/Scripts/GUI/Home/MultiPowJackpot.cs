@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Multimorphic.P3App.GUI;
 
-namespace MeridianPinballClub.P3SA.GUI {
+namespace MeridianPinballClub.MeridianMash.GUI {
 
 	public class MultiPowJackpot : MonoBehaviour {
 
@@ -72,13 +72,13 @@ namespace MeridianPinballClub.P3SA.GUI {
 		}
 
 		private void PlayPowSound() {
-			P3SAAudio.Instance.PlaySound3D(powSoundName, gameObject.transform);
+			MeridianMashAudio.Instance.PlaySound3D(powSoundName, gameObject.transform);
 			numPowSounds--;
 			SetupPowSoundTimer();
 		}
 		
 		private void PlayJackpot() {
-			P3SAAudio.Instance.PlaySound3D(jackpotSoundName, gameObject.transform);
+			MeridianMashAudio.Instance.PlaySound3D(jackpotSoundName, gameObject.transform);
 			Instantiate(Resources.Load(jackpotPrefabName));
 			numPows--;
 			SetupTimer();

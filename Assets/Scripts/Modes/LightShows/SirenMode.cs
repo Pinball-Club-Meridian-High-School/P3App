@@ -5,10 +5,10 @@ using Multimorphic.P3;
 using Multimorphic.P3App.Modes;
 using System.Collections.Generic;
 
-namespace MeridianPinballClub.P3SA.Modes
+namespace MeridianPinballClub.MeridianMash.Modes
 {
 
-    public class SirenMode : P3SAGameMode
+    public class SirenMode : MeridianMashGameMode
 	{
 		List<List<string>> nameGroups;
 		List<LEDScript> LocalLEDScripts;

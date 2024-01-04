@@ -4,12 +4,12 @@ using Multimorphic.P3;
 using System.Collections.Generic;
 using System.Linq;
 using Multimorphic.P3App.Modes;
-using MeridianPinballClub.P3SA.Modes;
+using MeridianPinballClub.MeridianMash.Modes;
 using Multimorphic.P3App.Modes.Data;
 using Multimorphic.P3App.Twitch;
-using MeridianPinballClub.P3SA.GUI;
+using MeridianPinballClub.MeridianMash.GUI;
 
-namespace MeridianPinballClub.P3SA.Modes
+namespace MeridianPinballClub.MeridianMash.Modes
 {
 
     public class TwitchAttacker
@@ -123,7 +123,7 @@ namespace MeridianPinballClub.P3SA.Modes
             AddGUIEventHandler("Evt_ReceiveTwitchMessage", ReceiveTwitchMessageEventHandler);
             AddModeEventHandler("Evt_TwitchAnnounceRules", TwitchAnnounceRulesEventHandler, Priority);
             AddModeEventHandler("Evt_TwitchAllowPowerupRequests", TwitchAllowPowerupRequestsEventHandler, Priority);
-            blackoutLEDsMode = new RGBFadeOnAndHoldMode(p3, P3SAPriorities.PRIORITY_BLACKOUT_LED_SHOW, Multimorphic.P3.Colors.Color.off, 1);
+            blackoutLEDsMode = new RGBFadeOnAndHoldMode(p3, MeridianMashPriorities.PRIORITY_BLACKOUT_LED_SHOW, Multimorphic.P3.Colors.Color.off, 1);
         }
 
         public override void mode_started ()

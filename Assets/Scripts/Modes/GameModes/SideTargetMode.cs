@@ -5,14 +5,14 @@ using Multimorphic.P3App.Modes;
 using Multimorphic.P3App.Modes.Data;
 using Multimorphic.P3App.Logging;
 
-namespace MeridianPinballClub.P3SA.Modes
+namespace MeridianPinballClub.MeridianMash.Modes
 {
 
 	/// <summary>
 	/// A mode to handle detection of side target hits, as well as their GUI highlighting and LED lighting.
 	/// Includes recognition of attributes to handle the difficulty of side targets, so that targets may need to be hit singly or one hit may be interpreted as 2 or 4 hits.
 	/// </summary>
-	public class SideTargetMode : P3SAGameMode
+	public class SideTargetMode : MeridianMashGameMode
 	{
 		private List<bool> states;
 		private int difficulty;

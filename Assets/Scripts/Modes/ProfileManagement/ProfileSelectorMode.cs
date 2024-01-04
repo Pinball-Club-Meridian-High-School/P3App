@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Multimorphic.P3;
 using Multimorphic.P3App.Modes.Selector;
 
-namespace MeridianPinballClub.P3SA.Modes.Menu {
+namespace MeridianPinballClub.MeridianMash.Modes.Menu {
 
 	public class ProfileSelectorMode : SelectorMode {
 	

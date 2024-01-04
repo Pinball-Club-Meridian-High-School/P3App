@@ -2,11 +2,11 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using Multimorphic.P3App.Modes;
-using MeridianPinballClub.P3SA.Modes;
+using MeridianPinballClub.MeridianMash.Modes;
 using Multimorphic.P3App.GUI;
 using Multimorphic.P3App.Data;
 
-namespace MeridianPinballClub.P3SA.GUI {
+namespace MeridianPinballClub.MeridianMash.GUI {
 	public class BallSaveManager : P3Aware {
 
 		private GameObject ballSaveActiveObject;
@@ -79,7 +79,7 @@ namespace MeridianPinballClub.P3SA.GUI {
 			else if (time <= 0) {
 				ballSaveTime = time;
 				if (ballSaveActiveObject != null) {
-					P3SAAudio.Instance.PlaySound3D("BallSaveDisabled", gameObject.transform);
+					MeridianMashAudio.Instance.PlaySound3D("BallSaveDisabled", gameObject.transform);
 				}
 				Destroy (ballSaveActiveObject);
 			}
@@ -124,7 +124,7 @@ namespace MeridianPinballClub.P3SA.GUI {
 		public void BallSavePlayAnimationEventHandler(string eventName, object eventObject) {
 			string sceneName = (string)eventObject;
 
-			P3SAAudio.Instance.PlaySound3D("Ball_Save_" + sceneName, gameObject.transform);
+			MeridianMashAudio.Instance.PlaySound3D("Ball_Save_" + sceneName, gameObject.transform);
 
 			Instantiate(Resources.Load("Prefabs/" + sceneName + "/BallSave"));
 		}

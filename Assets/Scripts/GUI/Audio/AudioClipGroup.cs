@@ -3,7 +3,7 @@ using UnityEngine.Audio;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace MeridianPinballClub.P3SA.GUI
+namespace MeridianPinballClub.MeridianMash.GUI
 {
 
     public class AudioClipGroup : MonoBehaviour

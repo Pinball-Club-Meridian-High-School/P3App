@@ -2,8 +2,8 @@ using UnityEngine;
 using System.Collections;
 using Multimorphic.P3App.GUI;
 
-namespace MeridianPinballClub.P3SA.GUI {
-	public class AttractSceneController : P3SASceneController {
+namespace MeridianPinballClub.MeridianMash.GUI {
+	public class AttractSceneController : MeridianMashSceneController {
 
 		private GameObject currAnim;
 		//private GameObject BonusSummaryObject;
@@ -22,8 +22,8 @@ namespace MeridianPinballClub.P3SA.GUI {
 
 			//BonusSummaryObject.renderer.enabled = false;
 
-			if (P3SAAudio.Instance)
-				P3SAAudio.Instance.StopAllPlaylists();
+			if (MeridianMashAudio.Instance)
+				MeridianMashAudio.Instance.StopAllPlaylists();
 
 			dialogRoot = GameObject.Find("Dialogs");
 			titlesRoot = GameObject.Find("Titles");
@@ -52,7 +52,7 @@ namespace MeridianPinballClub.P3SA.GUI {
 		}
 
 		public void StartGameEventHandler(string eventName, object eventObject) {
-			P3SAAudio.Instance.PlaySound3D("StartGame_PlayerOne", gameObject.transform);
+			MeridianMashAudio.Instance.PlaySound3D("StartGame_PlayerOne", gameObject.transform);
 		}
 
 		public void ShowDialogEventHandler(string eventName, object eventObject) {

@@ -1,10 +1,10 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using MeridianPinballClub.P3SA.Modes;
+using MeridianPinballClub.MeridianMash.Modes;
 using Multimorphic.P3App.GUI;
 
-namespace MeridianPinballClub.P3SA.GUI {
+namespace MeridianPinballClub.MeridianMash.GUI {
 
 	public class MultiballManager : P3Aware {
 
@@ -68,7 +68,7 @@ namespace MeridianPinballClub.P3SA.GUI {
 			if (multiballCalloutTimer > 0) {
 				multiballCalloutTimer -= Time.deltaTime;
 				if (multiballCalloutTimer <= 0) {
-					P3SAAudio.Instance.PlaySound3D(multiballCalloutName, gameObject.transform);
+					MeridianMashAudio.Instance.PlaySound3D(multiballCalloutName, gameObject.transform);
 				}
 			}
 		}
@@ -176,7 +176,7 @@ namespace MeridianPinballClub.P3SA.GUI {
 			bool on = (bool)eventObject;
 			if (on) {
 				multiballSuperDuperJackpotLit = (GameObject) Instantiate(Resources.Load("Prefabs/Multiball/SDJ_Lit"));
-				P3SAAudio.Instance.PlaySound3D("SuperDuperJackpotLit", gameObject.transform);
+				MeridianMashAudio.Instance.PlaySound3D("SuperDuperJackpotLit", gameObject.transform);
 			}
 			else
 				Destroy (multiballSuperDuperJackpotLit);
@@ -184,7 +184,7 @@ namespace MeridianPinballClub.P3SA.GUI {
 			
 		public void MultiballStartEventHandler(string eventName, object eventObject) {
 			MultiballStatusStruct status = (MultiballStatusStruct)eventObject;
-            // P3SAAudio.Instance.RefillSoundGroupPool("SaucerEject_Fire");
+            // MeridianMashAudio.Instance.RefillSoundGroupPool("SaucerEject_Fire");
 			Instantiate(Resources.Load("Prefabs/Multiball/MULTIBALL_0" + status.totalBalls.ToString()));
 			multiballStatus = (GameObject)Instantiate(Resources.Load("Prefabs/Multiball/MultiballStatusWindow"));
 			display = multiballStatus.GetComponent<MultiballStatusDisplay>();
@@ -203,20 +203,20 @@ namespace MeridianPinballClub.P3SA.GUI {
 		}
 
 		public void MultiballNoLockEventHandler(string eventName, object eventObject) {
-			P3SAAudio.Instance.PlaySound3D("Saucer_Ball_NoLock", gameObject.transform);
+			MeridianMashAudio.Instance.PlaySound3D("Saucer_Ball_NoLock", gameObject.transform);
 		}
 
 		public void MultiballLockEventHandler(string eventName, object eventObject) {
-			P3SAAudio.Instance.PlaySound3D("Saucer_Ball_Lock", gameObject.transform);
+			MeridianMashAudio.Instance.PlaySound3D("Saucer_Ball_Lock", gameObject.transform);
 			Instantiate(Resources.Load("Prefabs/Multiball/BallLocked_0" + (int)eventObject));
 		}
 
 		public void MultiballEjectEventHandler(string eventName, object eventObject) {
-			P3SAAudio.Instance.PlaySound3D("SaucerEject_Fire", gameObject.transform);
+			MeridianMashAudio.Instance.PlaySound3D("SaucerEject_Fire", gameObject.transform);
 		}
 
 		public void MultiballLockLitEventHandler(string eventName, object eventObject) {
-			P3SAAudio.Instance.PlaySound3D("LockIsLit", gameObject.transform);
+			MeridianMashAudio.Instance.PlaySound3D("LockIsLit", gameObject.transform);
 			Instantiate(Resources.Load("Prefabs/Multiball/LockIsLit"));
 		}
 

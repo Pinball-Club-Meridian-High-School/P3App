@@ -1,16 +1,16 @@
 using UnityEngine;
 using System.Collections;
-using MeridianPinballClub.P3SA.GUI;
+using MeridianPinballClub.MeridianMash.GUI;
 using Multimorphic.P3App.GUI;
 
-namespace MeridianPinballClub.P3SA.GUI {
+namespace MeridianPinballClub.MeridianMash.GUI {
 
-	public class IntroVideoSceneController : P3SASceneController {
+	public class IntroVideoSceneController : MeridianMashSceneController {
 
 		public bool useAlternateAudio;
 		private AudioSource alternateAudio;
 		private GameObject P3PlayfieldObj;
-		private GameObject P3SAAudioObj;
+		private GameObject MeridianMashAudioObj;
 
 		// Use this for initialization
 		public override void Start () {
@@ -27,13 +27,13 @@ namespace MeridianPinballClub.P3SA.GUI {
 			if (P3PlayfieldObj)
 				P3PlayfieldObj.SetActive(false);
 
-			P3SAAudioObj = GameObject.Find ("P3SAAudio(Clone)");
-			if (P3SAAudioObj) {
-				P3SAAudioObj.SetActive(!useAlternateAudio);
-				P3SAAudioObj.GetComponent<P3SAAudio>().moveWithCamera = false;
+			MeridianMashAudioObj = GameObject.Find ("MeridianMashAudio(Clone)");
+			if (MeridianMashAudioObj) {
+				MeridianMashAudioObj.SetActive(!useAlternateAudio);
+				MeridianMashAudioObj.GetComponent<MeridianMashAudio>().moveWithCamera = false;
 			}
 
-			P3SAAudio.Instance.ChangePlaylistByName("IntroAnimAudio");
+			MeridianMashAudio.Instance.ChangePlaylistByName("IntroAnimAudio");
 		}
 
 		protected override void CreateEventHandlers() {
@@ -52,21 +52,21 @@ namespace MeridianPinballClub.P3SA.GUI {
 		}
 
 		private void StopVideo(string eventName, object eventObject) {
-            if (P3SAAudio.Instance)
-                P3SAAudio.Instance.StopAllPlaylists();
+            if (MeridianMashAudio.Instance)
+                MeridianMashAudio.Instance.StopAllPlaylists();
 		}
 
 		protected override void OnDestroy () {
-            if (P3SAAudio.Instance)
-                P3SAAudio.Instance.StopAllPlaylists();
+            if (MeridianMashAudio.Instance)
+                MeridianMashAudio.Instance.StopAllPlaylists();
 
 			// Reneable objects for normal gameplay
 			if (P3PlayfieldObj)
 				P3PlayfieldObj.SetActive(true);
 
-			if (P3SAAudioObj) {
-				P3SAAudioObj.SetActive(true);
-				P3SAAudioObj.GetComponent<P3SAAudio>().moveWithCamera = true;
+			if (MeridianMashAudioObj) {
+				MeridianMashAudioObj.SetActive(true);
+				MeridianMashAudioObj.GetComponent<MeridianMashAudio>().moveWithCamera = true;
 			}
 
 			base.OnDestroy();

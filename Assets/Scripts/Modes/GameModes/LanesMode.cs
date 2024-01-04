@@ -4,10 +4,10 @@ using Multimorphic.P3;
 using System.Collections.Generic;
 using System.Linq;
 using Multimorphic.P3App.Modes;
-using MeridianPinballClub.P3SA.Modes;
+using MeridianPinballClub.MeridianMash.Modes;
 using Multimorphic.P3App.Modes.Data;
 
-namespace MeridianPinballClub.P3SA.Modes
+namespace MeridianPinballClub.MeridianMash.Modes
 {
 	public struct LanesCompletedStatus
 	{
@@ -19,7 +19,7 @@ namespace MeridianPinballClub.P3SA.Modes
 	/// <summary>
 	/// A mode which handles the rollovers in the lower lanes of the playfield, including sequenced advancement via flipper buttons. 
 	/// </summary>
-    public class LanesMode : P3SAGameMode
+    public class LanesMode : MeridianMashGameMode
 	{
 
 		private int numCompletions;

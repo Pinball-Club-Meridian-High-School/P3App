@@ -3,7 +3,7 @@ using System.Collections;
 using Multimorphic.P3App.GUI;
 using Multimorphic.P3App.GUI.Selector;
 
-namespace MeridianPinballClub.P3SA.GUI {
+namespace MeridianPinballClub.MeridianMash.GUI {
 
 	public class ProfileSelectorItem : SelectorItem {
 

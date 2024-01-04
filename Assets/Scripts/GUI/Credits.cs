@@ -4,7 +4,7 @@ using Multimorphic.P3App.GUI;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MeridianPinballClub.P3SA.GUI {
+namespace MeridianPinballClub.MeridianMash.GUI {
 
 	public class Credits : P3Aware {
 		private Text creditsText;

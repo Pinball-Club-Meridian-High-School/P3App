@@ -2,10 +2,10 @@ using System;
 using Multimorphic.P3;
 using Multimorphic.P3App.Modes;
 
-namespace MeridianPinballClub.P3SA.Modes
+namespace MeridianPinballClub.MeridianMash.Modes
 {
 
-    public class ShotCounter : P3SAGameMode
+    public class ShotCounter : MeridianMashGameMode
 	{
 		int count;
 		string evtNameOut;

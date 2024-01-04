@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-namespace MeridianPinballClub.P3SA.GUI {
+namespace MeridianPinballClub.MeridianMash.GUI {
 
 	public class CounterZoom : MonoBehaviour {
 		private float startZoom;

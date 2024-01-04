@@ -5,7 +5,7 @@ using Multimorphic.P3App.Modes;
 using Multimorphic.P3App.GUI;
 using Multimorphic.P3App.Logging;
 
-namespace MeridianPinballClub.P3SA.GUI {
+namespace MeridianPinballClub.MeridianMash.GUI {
 
 	public class Bonus : BonusBackgroundBase {
 
@@ -56,16 +56,16 @@ namespace MeridianPinballClub.P3SA.GUI {
 			if (LineIndex < (BonusData.NumItems() + 2)) {
 				// Music
 				if (LineIndex == BonusData.NumItems() + 1) {
-                    P3SAAudio.Instance.ChangePlaylistByName("Bonus_Total");
+                    MeridianMashAudio.Instance.ChangePlaylistByName("Bonus_Total");
 				}
 				
 				// FX
 				if (LineIndex == BonusData.NumItems()) {
-					P3SAAudio.Instance.PlaySound3D("Bonus_X", gameObject.transform);
+					MeridianMashAudio.Instance.PlaySound3D("Bonus_X", gameObject.transform);
 					Multimorphic.P3App.Logging.Logger.Log ("Bonus_X");
 				}
 				else if (LineIndex < BonusData.NumItems()) {
-					P3SAAudio.Instance.PlaySound3D("Bonus_Dings", gameObject.transform);
+					MeridianMashAudio.Instance.PlaySound3D("Bonus_Dings", gameObject.transform);
 				}
 
 				int startIndex;
@@ -155,7 +155,7 @@ namespace MeridianPinballClub.P3SA.GUI {
 		}
 
 		public void SetBonusDataEventHandler(string eventName, object eventData) {
-			P3SAAudio.Instance.ChangePlaylistByName("Bonus_Start");
+			MeridianMashAudio.Instance.ChangePlaylistByName("Bonus_Start");
 			Audio.RefillSoundGroupPool("Bonus_Dings");
 			Multimorphic.P3App.Logging.Logger.Log ("SetBonusDataHandler");
 			BonusData = (BonusInfo) eventData;

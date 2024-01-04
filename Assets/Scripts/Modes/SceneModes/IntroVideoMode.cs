@@ -6,7 +6,7 @@ using Multimorphic.P3App.Modes;
 
 using System.Collections.Generic;
 
-namespace MeridianPinballClub.P3SA.Modes
+namespace MeridianPinballClub.MeridianMash.Modes
 {
 
     public class IntroVideoMode : SceneMode

@@ -3,11 +3,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Multimorphic.P3App.Modes;
-using MeridianPinballClub.P3SA.Modes;
+using MeridianPinballClub.MeridianMash.Modes;
 using Multimorphic.P3App.GUI;
 using Multimorphic.P3App.Data;
 
-namespace MeridianPinballClub.P3SA.GUI {
+namespace MeridianPinballClub.MeridianMash.GUI {
 	public class LanesManager : P3Aware {
 
 		private float awardSoundDelayTimer;
@@ -40,26 +40,26 @@ namespace MeridianPinballClub.P3SA.GUI {
 			if (awardSoundDelayTimer > 0) {
 				awardSoundDelayTimer -= Time.deltaTime;
 				if (awardSoundDelayTimer <= 0) {
-					P3SAAudio.Instance.PlaySound3D(soundName, gameObject.transform);
+					MeridianMashAudio.Instance.PlaySound3D(soundName, gameObject.transform);
 				}
 			}
 
 			if (glintDelayTimer > 0 && glintCounter > 0) {
 				glintDelayTimer -= Time.deltaTime;
 				if (glintDelayTimer <= 0) {
-					P3SAAudio.Instance.PlaySound3D("FX_LaneCompleteGlints", gameObject.transform);
+					MeridianMashAudio.Instance.PlaySound3D("FX_LaneCompleteGlints", gameObject.transform);
 					glintDelayTimer = GLINT_DELAY_TIME;
 					glintCounter--;
 				}
 			}
 		}
 
-			//P3SAAudio.Instance.PlaySound3D("Lane_Return_Lit", GetSidePos ((bool)eventObject));
-			//P3SAAudio.Instance.PlaySound3D("Lane_Enables", GetSidePos ((bool)eventObject));
+			//MeridianMashAudio.Instance.PlaySound3D("Lane_Return_Lit", GetSidePos ((bool)eventObject));
+			//MeridianMashAudio.Instance.PlaySound3D("Lane_Enables", GetSidePos ((bool)eventObject));
 
 		public void AnimateLanesRightEventHandler(string evtName, object evtData) {
 			List<bool> lanes = (List<bool>)evtData;
-			P3SAAudio.Instance.PlaySound3D("LaneShiftRight", gameObject.transform);
+			MeridianMashAudio.Instance.PlaySound3D("LaneShiftRight", gameObject.transform);
 			for (int i=0; i<lanes.Count; i++) {
 				//if (lanes[i])
 				//	Instantiate(Resources.Load("Prefabs/Lanes/InOutlaneTransitionRight_" + (i+1).ToString()));
@@ -68,7 +68,7 @@ namespace MeridianPinballClub.P3SA.GUI {
 		}
 		
 		public void AnimateLanesLeftEventHandler(string evtName, object evtData) {
-			P3SAAudio.Instance.PlaySound3D("LaneShiftLeft", gameObject.transform);
+			MeridianMashAudio.Instance.PlaySound3D("LaneShiftLeft", gameObject.transform);
 			List<bool> lanes = (List<bool>)evtData;
 			for (int i=0; i<lanes.Count; i++) {
 				//if (lanes[i])
@@ -80,25 +80,25 @@ namespace MeridianPinballClub.P3SA.GUI {
 		public void LaneActivatedEventHandler(string evtName, object evtData) {
 			int lane = (int)evtData;
 			if (lane == 0)
-				P3SAAudio.Instance.PlaySound3D("FX_LaneLight_0", gameObject.transform);
+				MeridianMashAudio.Instance.PlaySound3D("FX_LaneLight_0", gameObject.transform);
 			else if (lane == 1)
-				P3SAAudio.Instance.PlaySound3D("FX_LaneLight_1", gameObject.transform);
+				MeridianMashAudio.Instance.PlaySound3D("FX_LaneLight_1", gameObject.transform);
 			else if (lane == 2)
-				P3SAAudio.Instance.PlaySound3D("FX_LaneLight_2", gameObject.transform);
+				MeridianMashAudio.Instance.PlaySound3D("FX_LaneLight_2", gameObject.transform);
 			else 
-				P3SAAudio.Instance.PlaySound3D("FX_LaneLight_3", gameObject.transform);
+				MeridianMashAudio.Instance.PlaySound3D("FX_LaneLight_3", gameObject.transform);
 		}
 
 		public void LaneAlreadyActivatedEventHandler(string evtName, object evtData) {
 			int lane = (int)evtData;
 			if (lane == 0)
-				P3SAAudio.Instance.PlaySound3D("FX_LaneOutNull", gameObject.transform);
+				MeridianMashAudio.Instance.PlaySound3D("FX_LaneOutNull", gameObject.transform);
 			else if (lane == 1)
-				P3SAAudio.Instance.PlaySound3D("FX_LaneReturnNull", gameObject.transform);
+				MeridianMashAudio.Instance.PlaySound3D("FX_LaneReturnNull", gameObject.transform);
 			else if (lane == 2)
-				P3SAAudio.Instance.PlaySound3D("FX_LaneReturnNull", gameObject.transform);
+				MeridianMashAudio.Instance.PlaySound3D("FX_LaneReturnNull", gameObject.transform);
 			else 
-				P3SAAudio.Instance.PlaySound3D("FX_LaneOutNull", gameObject.transform);
+				MeridianMashAudio.Instance.PlaySound3D("FX_LaneOutNull", gameObject.transform);
 		}
 
 		public void LanesCompletedEventHandler(string evtName, object evtData) {

@@ -1,7 +1,7 @@
 using Multimorphic.P3App.Modes;
 using Multimorphic.P3;
 
-namespace MeridianPinballClub.P3SA.Modes
+namespace MeridianPinballClub.MeridianMash.Modes
 {
 
     public class SettingsSelectorMode : AttributeSelectorMode
