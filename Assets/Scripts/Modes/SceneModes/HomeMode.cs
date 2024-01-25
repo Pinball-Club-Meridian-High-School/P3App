@@ -79,6 +79,8 @@ namespace MeridianPinballClub.MeridianMash.Modes
 
             AddModeEventHandler("Evt_DialogClosed", DialogClosedEventHandler, Priority);
 
+            /* DISABLED - The call to `add_switch_handler` here is causing problems for some reason
+             *  I believe an invalid value for the switch name is being passed, and so the method throws an error because the switch can't be found
             // Here's an example of how to subscribe to generically-defined BallPaths in the playfield module drivers.
             // You might use code like this if you want your game to work with all playfield modules or if you want
             // to use the module drivers detection logic for when playfield shots, targets, holes, etc are hit.
@@ -102,6 +104,7 @@ namespace MeridianPinballClub.MeridianMash.Modes
                 }
 
             }
+            */
 
             // Playfields that have module drivers must include Hole paths in the BallPathDefinitions and prevent Evt_TroughLauncherEntry from
             // getting to the app.  So those are handled above.
