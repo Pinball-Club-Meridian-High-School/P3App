@@ -78,9 +78,7 @@ namespace MeridianPinballClub.MeridianMash.Modes
 			AddModeEventHandler("Evt_PlayerRemoved", RefreshButtonLegendEventHandler, Priority);
 
             AddModeEventHandler("Evt_DialogClosed", DialogClosedEventHandler, Priority);
-
-            /* DISABLED - The call to `add_switch_handler` here is causing problems for some reason
-             *  I believe an invalid value for the switch name is being passed, and so the method throws an error because the switch can't be found
+            
             // Here's an example of how to subscribe to generically-defined BallPaths in the playfield module drivers.
             // You might use code like this if you want your game to work with all playfield modules or if you want
             // to use the module drivers detection logic for when playfield shots, targets, holes, etc are hit.
@@ -88,9 +86,18 @@ namespace MeridianPinballClub.MeridianMash.Modes
             {
                 if (shot.ExitType == BallPathExitType.Target)
                 {
-                    string[] strippedSwitchName = shot.StartedEvent.Split('_');            // format of switch event must be "sw_<switch name>_active" for started events
-                    string swName = strippedSwitchName[1];
-                    add_switch_handler(swName, "active", 0, TargetHitEventHandler);
+                    // Slight change here from the sample app to make the paths work with WAMONH
+                    // See: https://discord.com/channels/730055502557610004/1197560458408898683/1200115923143630928
+                    if (shot.CompletedEvent.Contains("_inactive"))
+                    {
+                        string[] strippedSwitchName = shot.StartedEvent.Split('_');            // format of switch event must be "sw_<switch name>_active" for started events
+                        string swName = strippedSwitchName[1];
+                        add_switch_handler(swName, "active", 0, TargetHitEventHandler);
+                    }
+                    else
+                    {
+                        AddModeEventHandler(shot.CompletedEvent, TargetPathHitEventHandler, priority);
+                    }
                 }
                 else if (shot.ExitType != BallPathExitType.Hole)
                 {
@@ -104,7 +111,6 @@ namespace MeridianPinballClub.MeridianMash.Modes
                 }
 
             }
-            */
 
             // Playfields that have module drivers must include Hole paths in the BallPathDefinitions and prevent Evt_TroughLauncherEntry from
             // getting to the app.  So those are handled above.
@@ -449,6 +455,13 @@ namespace MeridianPinballClub.MeridianMash.Modes
         private bool TargetHitEventHandler(Switch sw)
         {
             // Add target hit logic here or move the subscription and this code into a relevant child mode to process target hits
+            // for your game.
+            return SWITCH_CONTINUE;
+        }
+
+        private bool TargetPathHitEventHandler (string evtName, object eventData)
+        {
+            // Add target path hit logic here or move the subcription and this code into a relevant child mode to process target path hits
             // for your game.
             return SWITCH_CONTINUE;
         }
