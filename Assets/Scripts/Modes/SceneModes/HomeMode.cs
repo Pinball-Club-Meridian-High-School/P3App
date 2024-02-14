@@ -8,6 +8,8 @@ using Multimorphic.P3App.Modes;
 using Multimorphic.P3App.Modes.Data;
 using Multimorphic.P3App.Logging;
 using Multimorphic.P3App.Modes.PlayfieldModule;
+using MeridianPinballClub.MeridianMash.Modes.Rooms;
+using MeridianPinballClub.MeridianMash.Modes;
 
 namespace MeridianPinballClub.MeridianMash.Modes
 {
@@ -29,6 +31,9 @@ namespace MeridianPinballClub.MeridianMash.Modes
 		private LanesMode lanesMode;
 		private MeridianMashGameMode modeSummaryPendingMode;
 
+        // Rooms
+        private RoomMode[] roomModes = new RoomMode[3];
+
         // Declare TwitchControlMode to handle twitch viewer interactions
         private TwitchControlMode twitchControlMode;
 
@@ -45,6 +50,7 @@ namespace MeridianPinballClub.MeridianMash.Modes
 		public HomeMode (P3Controller controller, int priority, string SceneName)
 			: base(controller, priority, SceneName)
 		{
+            // SETUP MODES
 			//multiball = new Multiball (p3, MeridianMashPriorities.PRIORITY_MULTIBALL);
 			rightRampCounterMode = new ShotCounter(p3, MeridianMashPriorities.PRIORITY_SHOT_COUNTERS, "Evt_RightRampHit", "Evt_RightRampInc");
 			leftRampCounterMode = new ShotCounter(p3, MeridianMashPriorities.PRIORITY_SHOT_COUNTERS, "Evt_LeftRampHit", "Evt_LeftRampInc");
@@ -57,6 +63,11 @@ namespace MeridianPinballClub.MeridianMash.Modes
 			movingTargetMode = new MovingTargetMode (p3, MeridianMashPriorities.PRIORITY_MOVING_TARGET);
 			sideTargetMode = new SideTargetMode (p3, MeridianMashPriorities.PRIORITY_SIDE_TARGET);
 
+            roomModes[0] = new RoomMode(p3, "Basketball", this);
+            roomModes[1] = new RoomMode(p3, "Class", this);
+            roomModes[2] = new RoomMode(p3, "Graduation", this);
+
+            // SETUP EVENTS
             // Instantiate TwitchControlMode to handle twitch viewer interactions - don't forget to add it to the mode queue
             // in mode_started or StartPlaying (or later) and remove it from the mode queue in mode_stopped or earlier.
             twitchControlMode = new TwitchControlMode(p3, Priority);
@@ -78,6 +89,10 @@ namespace MeridianPinballClub.MeridianMash.Modes
 			AddModeEventHandler("Evt_PlayerRemoved", RefreshButtonLegendEventHandler, Priority);
 
             AddModeEventHandler("Evt_DialogClosed", DialogClosedEventHandler, Priority);
+
+            // GUI events
+            Multimorphic.P3App.Logging.Logger.Log("Listening for event \"" + MeridianMashEventNames.EnterRoomTriggered + "\"");
+            AddGUIEventHandler(MeridianMashEventNames.EnterRoomTriggered, EnterRoomTriggered);
             
             // Here's an example of how to subscribe to generically-defined BallPaths in the playfield module drivers.
             // You might use code like this if you want your game to work with all playfield modules or if you want
@@ -128,6 +143,33 @@ namespace MeridianPinballClub.MeridianMash.Modes
 
 			random = new Random();
 		}
+
+        private bool insideRoom = false;
+
+        private void EnterRoomTriggered(string eventName, object eventData)
+        {
+            // Only possible to enter a room if we are not already inside a room
+            if (!insideRoom)
+            {
+                int roomNumber = random.Next(roomModes.Length);
+                Multimorphic.P3App.Logging.Logger.Log("Entering room #" + roomNumber);
+
+                RoomMode room = roomModes[roomNumber];
+                p3.AddMode(room);
+                insideRoom = true;
+            }
+        }
+
+        public void leaveRoom(RoomMode room)
+        {
+            Multimorphic.P3App.Logging.Logger.Log("Leaving active room");
+            // Leave the room
+            p3.RemoveMode(room);
+            insideRoom = false;
+
+            // Reload this scene to update the GUI
+            Reload();
+        }
 
 		/// <summary>
 		/// Executed when this mode is mode is started.
